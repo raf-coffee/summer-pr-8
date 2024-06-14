@@ -1,0 +1,30 @@
+.desc-container {
+  display: grid;
+  grid-template-areas:
+    "title"
+    "video"
+    "desc-content";
+}
+
+.desc-title {
+  text-align: center;
+  grid-area: title;
+}
+
+.desc-video {
+  grid-area: video;
+  width: 100%;
+  min-width: 290px;
+  max-width: 554px;
+}
+
+.desc-video > div {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 56.25%;
+}
+
+.desc-content {
+  grid-area: desc-content;
+}
