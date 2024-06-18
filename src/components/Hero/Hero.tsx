@@ -1,11 +1,18 @@
+import { useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import { AppModal } from "../Modal/Modal";
 
 export function Hero() {
+  const [open, setOpen] = useState(false);
+
+  const handleClose = () => setOpen(false);
+  const handleOpen = () => setOpen(true);
+
   return (
-    <section className="bg-hero-image d-flex flex-column justify-content-center flex-grow-1">
+    <div className="bg-hero-image d-flex flex-column justify-content-center">
       <Container className="py-4">
         <Row>
-          <Col xs={9}>
+          <Col xs={9} md={12}>
             <p className="font-xl text-white mb-4 text-balance fw-bold">
               Эксклюзивная <span className="text-warning">фотосессия</span> при
               полете на вертолете
@@ -13,12 +20,19 @@ export function Hero() {
           </Col>
         </Row>
         <Row className="mb-4">
-          <Col xs={4} className="bg-warning text-white ms-2 pt-2 rounded-start">
+          <Col
+            xs={4}
+            sm={3}
+            md={2}
+            className="bg-warning text-white ms-2 pt-2 pe-lg-0 rounded-start"
+          >
             <p className="mb-0">Стоимость:</p>
-            <p className="fs-1">1500&#8381;</p>
+            <p className="fs-1 fw-bold">1500&#8381;</p>
           </Col>
           <Col
             xs={3}
+            md={2}
+            lg={1}
             className="bg-warning rounded-end d-flex align-items-center justify-content-center"
           >
             <svg
@@ -40,15 +54,23 @@ export function Hero() {
             </svg>
           </Col>
         </Row>
-        <div className="d-grid gap-2">
+        <div className="d-grid d-md-inline-block gap-2">
           <Button
             size="lg"
-            className="border border-3 rounded bg-transparent fw-bold py-4"
+            className="border border-4 border-white rounded bg-transparent fw-bold py-4"
+            onClick={handleOpen}
           >
             Забронировать место
           </Button>
+          <AppModal
+            show={open}
+            onHide={handleClose}
+            backdrop="static"
+            size="lg"
+            centered
+          />
         </div>
       </Container>
-    </section>
+    </div>
   );
 }

@@ -2,12 +2,17 @@ import { Col, Container, Row } from "react-bootstrap";
 
 export function Header() {
   return (
-    <Container>
+    <Container as="header">
       <Row className="py-4">
-        <Col className="d-flex align-items-center">
+        <Col xs={5} md={3} className="d-flex align-items-center">
           <h1 className="mb-0 text-uppercase">Helyfly</h1>
         </Col>
-        <Col className="d-flex align-items-center justify-content-center">
+        <Col className="d-none d-md-flex align-items-center">
+          <p className="mb-0">
+            <span className="text-secondary">Телефон:</span> 8(800)-123-12-12
+          </p>
+        </Col>
+        <Col className="d-flex d-md-none align-items-center justify-content-center ">
           <a href="">Москва</a>
         </Col>
         <Col className="d-flex align-items-center justify-content-end ">

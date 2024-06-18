@@ -4,11 +4,25 @@
     "title"
     "video"
     "desc-content";
+
+  @media (min-width: 768px) {
+    grid-template-areas:
+      "title video"
+      "desc-content video";
+    column-gap: 1rem;
+  }
 }
 
 .desc-title {
-  text-align: center;
   grid-area: title;
+  text-align: center;
+  margin-bottom: 14px;
+  margin-top: 30px;
+
+  @media (min-width: 768px) {
+    text-align: start;
+    padding-right: 50%;
+  }
 }
 
 .desc-video {
@@ -16,6 +30,11 @@
   width: 100%;
   min-width: 290px;
   max-width: 554px;
+  margin-bottom: 30px;
+
+  @media (min-width: 768px) {
+    margin-top: 2rem;
+  }
 }
 
 .desc-video > div {

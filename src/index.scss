@@ -1,6 +1,13 @@
 @import "../node_modules/bootstrap/scss/functions";
 
 // Default variable overrides
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1141px,
+);
 
 // Required
 @import "../node_modules/bootstrap/scss/variables";
@@ -29,20 +36,75 @@ body {
   font-family: "Montserrat";
 }
 
-main {
-  min-height: 100dvh;
-}
-
 .bg-hero-image {
   background-image: url("/helimain.png");
   background-size: cover;
   background-position: center;
+  min-height: 650px;
+
+  @media (min-width: 768px) {
+    min-height: 840px;
+  }
 }
 
 .text-balance {
   text-wrap: balance;
 }
 
+.overflow-scroll {
+  overflow: scroll;
+}
+
 .font-xl {
   font-size: 2rem;
+}
+
+.btn-outline-warning {
+  color: $orange-400;
+  border-color: $orange-400;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  color: $gray-900;
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23adb5bd'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23adb5bd'%3E%3Cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E");
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: #adb5bd;
+}
+
+.carousel-indicators {
+  margin-top: 20px;
+}
+
+.carousel-image-height {
+  height: 70px;
+}
+.carousel-height {
+  height: 200px;
+}
+.carousel-inner {
+  height: 100%;
+}
+
+.small-image {
+  width: 67px;
+  height: auto;
+}
+
+.modal-header .btn-close {
+  margin: 0;
+}
+
+.form-check-input:checked {
+  background-color: orange;
+  border-color: orange;
 }
